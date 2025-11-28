@@ -15,11 +15,49 @@
     <title>Portfolio - Bao Toan</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Project Tags Styling */
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0.8rem 0;
+      }
+
+      .project-tags .tag {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* Enhanced project cards */
+      .project-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .project-card:hover .project-tags .tag {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      }
+
+      .project-info p {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       crossorigin="anonymous"
     />
+    <script src="js/projects-data.js"></script>
+    <script src="js/project-generator.js"></script>
   </head>
   <body>
     <header>
@@ -150,55 +188,24 @@
         </section>
         <section id="projects">
           <h2>Featured Projects</h2>
-          <div class="blog-grid">
-            <div class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
-                alt="Project 1"
-              />
-              <div class="project-info">
-                <h3 class="project-title">Task Management Website</h3>
-                <p>
-                  A team task management system using React, Node.js, MongoDB.
-                  Role: Fullstack Developer.
-                </p>
-                <a href="project3.html" target="_blank" class="btn-outline"
-                  >View details</a
-                >
-              </div>
+          <div class="blog-grid" id="projects-container">
+            <!-- Loading state -->
+            <div
+              class="loading-projects"
+              style="
+                grid-column: 1 / -1;
+                text-align: center;
+                padding: 3rem;
+                color: #64748b;
+              "
+            >
+              <i
+                class="fa-solid fa-spinner fa-spin"
+                style="font-size: 2rem; margin-bottom: 1rem"
+              ></i>
+              <p>Loading featured projects...</p>
             </div>
-            <div class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-                alt="Project 2"
-              />
-              <div class="project-info">
-                <h3 class="project-title">Personal Blog Application</h3>
-                <p>
-                  SEO-optimized, responsive personal blog using Next.js,
-                  Firebase. Role: Frontend Developer.
-                </p>
-                <a href="project3.html" target="_blank" class="btn-outline"
-                  >View details</a
-                >
-              </div>
-            </div>
-            <div class="project-card">
-              <img
-                src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
-                alt="Project 3"
-              />
-              <div class="project-info">
-                <h3 class="project-title">Product Landing Page</h3>
-                <p>
-                  Designed a product landing page with modern UI and animation
-                  effects. Role: UI Designer.
-                </p>
-                <a href="project3.html" target="_blank" class="btn-outline"
-                  >View details</a
-                >
-              </div>
-            </div>
+            <!-- Projects will be dynamically loaded here -->
           </div>
         </section>
         <section id="contact" class="card">

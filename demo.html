@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Portfolio System - Demo</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        line-height: 1.6;
+        color: #333;
+      }
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .demo-section {
+        background: #f8fafc;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        border-left: 4px solid #667eea;
+      }
+      .demo-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .demo-link {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #333;
+        border: 2px solid #e2e8f0;
+        transition: all 0.3s ease;
+      }
+      .demo-link:hover {
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+      }
+      .demo-link h3 {
+        margin: 0 0 0.5rem 0;
+        color: #667eea;
+      }
+      .demo-link p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #64748b;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .feature {
+        background: white;
+        padding: 1rem;
+        border-radius: 6px;
+        text-align: center;
+      }
+      .feature i {
+        font-size: 2rem;
+        color: #667eea;
+        margin-bottom: 0.5rem;
+      }
+      .code-example {
+        background: #1a202c;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+        font-size: 0.9rem;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>🚀 Dynamic Portfolio System</h1>
+      <p>
+        Hệ thống portfolio động với JavaScript - No more multiple HTML files!
+      </p>
+    </div>
+
+    <div class="demo-section">
+      <h2>✨ Tính năng chính</h2>
+      <div class="features">
+        <div class="feature">
+          <i class="fa-solid fa-database"></i>
+          <h4>Data-driven</h4>
+          <p>Tất cả projects được lưu trong file JSON duy nhất</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-magic-wand-sparkles"></i>
+          <h4>Dynamic Loading</h4>
+          <p>Content được load tự động theo URL parameters</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <h4>Responsive</h4>
+          <p>Hoạt động tốt trên mọi thiết bị</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-arrows-left-right"></i>
+          <h4>Navigation</h4>
+          <p>Tự động tạo navigation giữa projects</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>🎯 Demo Links</h2>
+      <div class="demo-links">
+        <a href="index.html" class="demo-link">
+          <h3><i class="fa-solid fa-home"></i> Portfolio Home</h3>
+          <p>Trang chủ với dynamic project cards</p>
+        </a>
+
+        <a href="project-detail.html?project=product-landing" class="demo-link">
+          <h3><i class="fa-solid fa-rocket"></i> Product Landing Page</h3>
+          <p>Modern landing page với GSAP animations</p>
+        </a>
+
+        <a
+          href="project-detail.html?project=e-commerce-dashboard"
+          class="demo-link"
+        >
+          <h3><i class="fa-solid fa-chart-bar"></i> E-commerce Dashboard</h3>
+          <p>Real-time analytics dashboard</p>
+        </a>
+
+        <a
+          href="project-detail.html?project=mobile-banking-app"
+          class="demo-link"
+        >
+          <h3><i class="fa-solid fa-mobile"></i> Mobile Banking App</h3>
+          <p>Secure banking với biometric auth</p>
+        </a>
+
+        <a
+          href="project-detail.html?project=ai-chat-platform"
+          class="demo-link"
+        >
+          <h3><i class="fa-solid fa-robot"></i> AI Chat Platform</h3>
+          <p>Intelligent conversational AI</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>💡 Cách thêm project mới</h2>
+      <p>Chỉ cần thêm vào file <code>js/projects-data.js</code>:</p>
+      <div class="code-example">
+        "new-project": { id: "new-project", title: "Amazing New Project",
+        subtitle: "Description of your project", hero: { gradient:
+        "linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)" }, images:
+        ["image1.jpg", "image2.jpg"], sidebar: { role: "Your Role", duration:
+        "Project Duration", techStack: "Technologies Used", teamSize: "Team
+        Information", status: "Project Status", demoLink: "https://demo-url.com"
+        }, content: { overview: "Project overview text...", features: [ { icon:
+        "fa-solid fa-star", title: "Feature Name" } ], achievements:
+        ["Achievement 1", "Achievement 2"], technical: "Technical implementation
+        details..." } }
+      </div>
+      <p>
+        Sau đó truy cập: <code>project-detail.html?project=new-project</code>
+      </p>
+    </div>
+
+    <div class="demo-section">
+      <h2>🛠️ File Structure</h2>
+      <div class="code-example">
+        portfolio/ ├── index.html # Homepage với dynamic project cards ├──
+        project-detail.html # Template cho tất cả project details ├── css/ │ └──
+        style.css # Styling chung ├── js/ │ ├── projects-data.js # Database của
+        tất cả projects │ └── project-generator.js # Logic để generate content
+        └── assets/ # Images, icons, etc.
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>🎉 Benefits</h2>
+      <ul>
+        <li>
+          ✅ <strong>Maintainable:</strong> Chỉ cần sửa 1 file data thay vì
+          nhiều HTML files
+        </li>
+        <li>✅ <strong>Scalable:</strong> Dễ dàng thêm unlimited projects</li>
+        <li>✅ <strong>SEO-friendly:</strong> Dynamic title và meta tags</li>
+        <li>
+          ✅ <strong>Professional:</strong> Consistent design và navigation
+        </li>
+        <li>
+          ✅ <strong>Fast Development:</strong> Không cần tạo HTML file mới cho
+          mỗi project
+        </li>
+      </ul>
+    </div>
+
+    <div
+      style="
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem;
+        background: #1a202c;
+        color: white;
+        border-radius: 12px;
+      "
+    >
+      <h3>🚀 Ready to use!</h3>
+      <p>
+        Hệ thống portfolio dynamic đã sẵn sàng. Chỉ cần thêm data và tạo
+        projects không giới hạn!
+      </p>
+      <a
+        href="index.html"
+        style="
+          display: inline-block;
+          margin-top: 1rem;
+          padding: 1rem 2rem;
+          background: #667eea;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-weight: 600;
+        "
+      >
+        View Live Portfolio →
+      </a>
+    </div>
+  </body>
+</html>

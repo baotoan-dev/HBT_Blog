@@ -10,7 +10,253 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       crossorigin="anonymous"
     />
-    <script src="js/projects-data.js"></script>
+    <!-- Inline projects data to ensure it's always available -->
+    <script>
+      const PROJECTS_DATA = {
+        "product-landing": {
+          id: "product-landing",
+          title: "Product Landing Page",
+          subtitle:
+            "Modern, responsive landing page with advanced animations and conversion optimization features",
+          hero: {
+            gradient:
+              "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+          },
+          images: [
+            "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85",
+          ],
+          sidebar: {
+            role: "Lead UI/UX Designer & Frontend Developer",
+            duration: "6 weeks (Oct - Nov 2024)",
+            techStack: "HTML5, CSS3, JavaScript ES6+, GSAP, Webpack",
+            teamSize: "3 developers, 1 designer",
+            status: "Live Demo & Source Code",
+            demoLink: "https://example.com/demo",
+          },
+          content: {
+            overview:
+              "This comprehensive product landing page represents a modern approach to digital marketing and user experience design. Built with cutting-edge web technologies, the project focuses on creating an engaging, high-converting platform that effectively communicates product value while maintaining exceptional performance across all devices.",
+            features: [
+              { icon: "fa-solid fa-bolt", title: "Advanced GSAP Animations" },
+              {
+                icon: "fa-solid fa-mobile-screen",
+                title: "Mobile-First Responsive Design",
+              },
+              {
+                icon: "fa-solid fa-chart-line",
+                title: "30% Conversion Rate Improvement",
+              },
+              {
+                icon: "fa-solid fa-palette",
+                title: "Contemporary UI/UX Design",
+              },
+              { icon: "fa-solid fa-rocket", title: "Optimized Performance" },
+              {
+                icon: "fa-solid fa-search",
+                title: "SEO & Accessibility Compliant",
+              },
+            ],
+            achievements: [
+              "Delivered a 30% increase in conversion rates through strategic UX optimization",
+              "Implemented responsive design ensuring seamless experience across all devices",
+              "Achieved 95+ Google PageSpeed scores for both desktop and mobile",
+              "Integrated advanced analytics and tracking for data-driven insights",
+              "Designed with accessibility standards (WCAG 2.1) for inclusive user experience",
+            ],
+            technical:
+              "The project leverages modern web standards including semantic HTML5, advanced CSS Grid and Flexbox layouts, and progressive JavaScript enhancement. Performance optimization techniques such as lazy loading, image optimization, and efficient code splitting ensure fast loading times across various network conditions.",
+          },
+        },
+        "e-commerce-dashboard": {
+          id: "e-commerce-dashboard",
+          title: "E-commerce Admin Dashboard",
+          subtitle:
+            "Real-time analytics dashboard with advanced data visualization and inventory management system",
+          hero: {
+            gradient:
+              "linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%)",
+          },
+          images: [
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85",
+          ],
+          sidebar: {
+            role: "Full-stack Developer & UI Designer",
+            duration: "8 weeks (Aug - Sep 2024)",
+            techStack: "React, Node.js, MongoDB, Chart.js, Material-UI",
+            teamSize: "4 developers, 2 designers",
+            status: "Production Ready",
+            demoLink: "https://example.com/dashboard-demo",
+          },
+          content: {
+            overview:
+              "A comprehensive e-commerce administration dashboard featuring real-time analytics, inventory management, and customer relationship tools. Built with modern React architecture and integrated with robust backend APIs for seamless data management and business intelligence.",
+            features: [
+              {
+                icon: "fa-solid fa-chart-bar",
+                title: "Real-time Analytics Dashboard",
+              },
+              {
+                icon: "fa-solid fa-boxes-stacked",
+                title: "Inventory Management System",
+              },
+              {
+                icon: "fa-solid fa-users",
+                title: "Customer Relationship Management",
+              },
+              {
+                icon: "fa-solid fa-shopping-cart",
+                title: "Order Processing & Tracking",
+              },
+              {
+                icon: "fa-solid fa-credit-card",
+                title: "Payment Gateway Integration",
+              },
+              { icon: "fa-solid fa-bell", title: "Real-time Notifications" },
+            ],
+            achievements: [
+              "Reduced order processing time by 60% through automated workflows",
+              "Improved inventory accuracy to 99.5% with real-time tracking",
+              "Increased admin productivity by 40% with intuitive interface design",
+              "Implemented secure role-based access control for multi-user environments",
+              "Achieved 99.9% uptime with robust error handling and monitoring",
+            ],
+            technical:
+              "Built using React 18 with TypeScript for type safety, integrated with Node.js and Express backend. MongoDB Atlas for cloud database with real-time synchronization. Implemented Redux Toolkit for state management and Chart.js for data visualization. Features JWT authentication, API rate limiting, and comprehensive error logging.",
+          },
+        },
+        "mobile-banking-app": {
+          id: "mobile-banking-app",
+          title: "Mobile Banking App UI",
+          subtitle:
+            "Secure and intuitive mobile banking interface with biometric authentication and real-time transactions",
+          hero: {
+            gradient:
+              "linear-gradient(135deg, #6c5ce7 0%, #fd79a8 50%, #fdcb6e 100%)",
+          },
+          images: [
+            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=85",
+          ],
+          sidebar: {
+            role: "Senior Mobile UI/UX Designer",
+            duration: "10 weeks (Jun - Aug 2024)",
+            techStack: "React Native, TypeScript, Redux, Reanimated",
+            teamSize: "5 developers, 3 designers, 1 security expert",
+            status: "App Store Ready",
+            demoLink: "https://example.com/banking-prototype",
+          },
+          content: {
+            overview:
+              "A next-generation mobile banking application designed with security-first approach and user-centric interface. Features advanced biometric authentication, real-time transaction processing, and intelligent financial insights to provide users with a seamless and secure banking experience.",
+            features: [
+              {
+                icon: "fa-solid fa-fingerprint",
+                title: "Biometric Authentication",
+              },
+              {
+                icon: "fa-solid fa-exchange-alt",
+                title: "Instant Money Transfers",
+              },
+              {
+                icon: "fa-solid fa-shield-alt",
+                title: "Advanced Security Features",
+              },
+              {
+                icon: "fa-solid fa-chart-pie",
+                title: "Expense Analytics & Insights",
+              },
+              { icon: "fa-solid fa-qrcode", title: "QR Code Payments" },
+              { icon: "fa-solid fa-bell", title: "Smart Transaction Alerts" },
+            ],
+            achievements: [
+              "Achieved 4.8/5 rating in user testing with 500+ participants",
+              "Reduced login time by 75% with biometric authentication implementation",
+              "Increased user engagement by 85% with personalized financial insights",
+              "Passed comprehensive security audits with zero critical vulnerabilities",
+              "Optimized app performance resulting in 50% faster loading times",
+            ],
+            technical:
+              "Developed using React Native with TypeScript for cross-platform compatibility. Implemented Redux for state management and React Native Reanimated for smooth animations. Integrated biometric authentication APIs, encryption libraries for data security, and real-time WebSocket connections for live updates. Features offline-first architecture with local SQLite database synchronization.",
+          },
+        },
+        "ai-chat-platform": {
+          id: "ai-chat-platform",
+          title: "AI Chat Platform",
+          subtitle:
+            "Intelligent conversational AI platform with natural language processing and multi-model integration",
+          hero: {
+            gradient:
+              "linear-gradient(135deg, #00d2ff 0%, #3a7bd5 50%, #8360c3 100%)",
+          },
+          images: [
+            "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=1200&q=85",
+          ],
+          sidebar: {
+            role: "AI/ML Engineer & Frontend Architect",
+            duration: "12 weeks (Mar - May 2024)",
+            techStack: "Next.js, Python, FastAPI, OpenAI API, WebSocket",
+            teamSize: "6 engineers, 2 ML specialists, 1 designer",
+            status: "Beta Testing Phase",
+            demoLink: "https://example.com/ai-chat-demo",
+          },
+          content: {
+            overview:
+              "An advanced AI-powered chat platform that integrates multiple language models to provide intelligent, context-aware conversations. Features real-time processing, multi-modal interactions, and sophisticated prompt engineering to deliver human-like conversational experiences for various use cases.",
+            features: [
+              {
+                icon: "fa-solid fa-brain",
+                title: "Multi-Model AI Integration",
+              },
+              {
+                icon: "fa-solid fa-comments",
+                title: "Real-time Chat Processing",
+              },
+              { icon: "fa-solid fa-language", title: "Multi-language Support" },
+              {
+                icon: "fa-solid fa-file-alt",
+                title: "Document Analysis & Q&A",
+              },
+              {
+                icon: "fa-solid fa-image",
+                title: "Image Generation & Analysis",
+              },
+              { icon: "fa-solid fa-code", title: "Code Generation & Review" },
+            ],
+            achievements: [
+              "Achieved 95% accuracy in intent recognition across 12 languages",
+              "Reduced response latency to under 500ms with optimized model serving",
+              "Processed over 1M+ conversations with 99.5% uptime reliability",
+              "Implemented advanced context memory spanning 100+ conversation turns",
+              "Created custom fine-tuned models improving domain-specific performance by 40%",
+            ],
+            technical:
+              "Built with Next.js 14 and TypeScript frontend, Python FastAPI backend with async processing. Integrated OpenAI GPT-4, Anthropic Claude, and custom fine-tuned models. Implemented WebSocket connections for real-time streaming, Redis for session management, and PostgreSQL for conversation storage. Features advanced prompt engineering, context chunking, and multi-modal processing capabilities.",
+          },
+        },
+      };
+
+      // Debug function to check if data is loaded
+      window.addEventListener("DOMContentLoaded", () => {
+        console.log(
+          "PROJECTS_DATA loaded:",
+          typeof PROJECTS_DATA !== "undefined"
+        );
+        if (typeof PROJECTS_DATA !== "undefined") {
+          console.log("Available projects:", Object.keys(PROJECTS_DATA));
+        }
+      });
+    </script>
     <style>
       /* === Premium Professional Design === */
 
@@ -464,6 +710,7 @@
         aspect-ratio: 16/10;
         border: 1px solid rgba(226, 232, 240, 0.8);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        min-height: 320px;
       }
 
       .carousel:hover {
@@ -477,7 +724,10 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.4s ease;
+        transition: transform 0.4s ease, opacity 0.3s ease;
+        background: #f8fafc;
+        min-height: 320px;
+        max-height: 480px;
       }
 
       .carousel:hover img {
@@ -613,6 +863,13 @@
       }
 
       @media (max-width: 768px) {
+        .carousel {
+          min-height: 180px;
+        }
+        .carousel img {
+          min-height: 180px;
+          max-height: 240px;
+        }
         .project-hero {
           height: 200px;
         }
@@ -816,13 +1073,153 @@
         opacity: 0.8;
       }
 
+      /* Project Navigation */
+      .project-navigation {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 4rem;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(226, 232, 240, 0.8);
+      }
+
+      .nav-project {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 2rem;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 16px;
+        border: 1px solid rgba(226, 232, 240, 0.6);
+        text-decoration: none;
+        color: #2d3748;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        min-width: 200px;
+        backdrop-filter: blur(8px);
+      }
+
+      .nav-project:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15);
+        border-color: rgba(102, 126, 234, 0.3);
+        color: #1a202c;
+      }
+
+      .nav-project.prev {
+        margin-right: auto;
+      }
+
+      .nav-project.next {
+        margin-left: auto;
+        flex-direction: row-reverse;
+      }
+
+      .nav-project i {
+        color: #667eea;
+        font-size: 1.2rem;
+      }
+
+      .nav-project div span {
+        display: block;
+        font-size: 0.85rem;
+        color: #64748b;
+        margin-bottom: 0.2rem;
+      }
+
+      .nav-project div strong {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1a202c;
+      }
+
+      /* Related Projects */
+      .related-projects {
+        margin-top: 4rem;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(226, 232, 240, 0.8);
+      }
+
+      .related-projects h3 {
+        font-size: 1.8rem;
+        color: #1a202c;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .related-card {
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 16px;
+        border: 1px solid rgba(226, 232, 240, 0.6);
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        text-decoration: none;
+        color: #2d3748;
+        backdrop-filter: blur(8px);
+      }
+
+      .related-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 32px rgba(102, 126, 234, 0.15);
+        border-color: rgba(102, 126, 234, 0.3);
+        color: #1a202c;
+      }
+
+      .related-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .related-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .related-card-info {
+        padding: 1.2rem;
+      }
+
+      .related-card h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #1a202c;
+      }
+
+      .related-card p {
+        font-size: 0.9rem;
+        color: #64748b;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        .project-navigation {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .nav-project.next {
+          flex-direction: row;
+        }
+
+        .related-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* === End Premium Professional CSS === */
     </style>
   </head>
   <body>
     <header>
       <nav class="main-nav">
-        <div class="logo">Zupa<span>Blog</span></div>
+        <div class="logo">HBT<span>Blog</span></div>
         <ul>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#experience">Experience</a></li>
@@ -885,6 +1282,12 @@
         style="display: none"
       >
         <div class="project-detail-left-col">
+          <div class="project-detail-info-box">
+            <h1 class="project-detail-title" id="project-title">Loading...</h1>
+            <div class="project-subtitle" id="project-subtitle">
+              Loading project details...
+            </div>
+          </div>
           <div class="carousel" id="carousel">
             <button
               class="carousel-btn left"
@@ -903,19 +1306,11 @@
             </button>
             <div class="carousel-dots" id="carouselDots"></div>
           </div>
-
-          <div class="project-detail-info-box">
-            <h1 class="project-detail-title" id="project-title">Loading...</h1>
-            <div class="project-subtitle" id="project-subtitle">
-              Loading project details...
-            </div>
-
-            <aside class="project-sidebar">
-              <ul id="project-sidebar-list">
-                <!-- Dynamic content will be loaded here -->
-              </ul>
-            </aside>
-          </div>
+          <aside class="project-sidebar">
+            <ul id="project-sidebar-list">
+              <!-- Dynamic content will be loaded here -->
+            </ul>
+          </aside>
         </div>
 
         <section class="project-main-content card">
@@ -938,6 +1333,12 @@
             <i class="fa-solid fa-arrow-left"></i>
             <span>Back to Projects</span>
           </a>
+
+          <!-- Project Navigation -->
+          <div id="project-navigation-container"></div>
+
+          <!-- Related Projects -->
+          <div id="related-projects-container"></div>
         </section>
       </div>
     </main>
@@ -945,14 +1346,10 @@
     <footer>
       <div class="footer-content">
         <div class="footer-left">
-          <div class="logo">Zupa<span>Blog</span></div>
-          <p>&copy; 2024 ZupaBlog. All rights reserved.</p>
+          <div class="logo">HBT<span>Blog</span></div>
+          <p>&copy; 2025 HBTBlog. All rights reserved.</p>
         </div>
-        <div class="footer-right">
-          <a href="index.html#about">About</a>
-          <a href="index.html#projects">Projects</a>
-          <a href="index.html#contact">Contact</a>
-        </div>
+        <div class="footer-right"></div>
       </div>
     </footer>
 
@@ -1002,6 +1399,8 @@
             // Load all content
             this.loadContent();
             this.setupCarousel();
+            this.loadNavigation();
+            this.loadRelatedProjects();
             this.hideLoading();
           } catch (error) {
             console.error("Error loading project:", error);
@@ -1155,27 +1554,52 @@
           prev.onclick = () => this.previousImage();
           next.onclick = () => this.nextImage();
 
-          // Load first image
-          this.updateCarousel(0);
+          // Load first image immediately
+          console.log("Loading first image:", this.images[0]);
+          img.src = this.images[0];
+          img.alt = `${this.currentProject.title} Screenshot 1`;
+          img.style.opacity = 1;
 
-          // Start auto-play
-          this.startAutoPlay();
+          // Error handling for image loading
+          img.onerror = () => {
+            console.error("Failed to load image:", this.images[0]);
+            img.alt = "Image failed to load";
+            img.style.background = "#e2e8f0";
+          };
+
+          // Start auto-play after image loads
+          img.onload = () => {
+            console.log("Image loaded successfully");
+            this.startAutoPlay();
+          };
         }
 
         updateCarousel(index) {
           const img = document.getElementById("carouselImg");
           const dots = document.getElementById("carouselDots");
 
-          img.style.transition = "opacity 0.7s";
-          img.style.opacity = 0;
-
-          setTimeout(() => {
+          // Set image source directly without opacity animation for first load
+          if (img.src === "" || img.src === window.location.href) {
             img.src = this.images[index];
             img.alt = `${this.currentProject.title} Screenshot ${index + 1}`;
-            img.onload = () => {
-              img.style.opacity = 1;
-            };
-          }, 350);
+            img.style.opacity = 1;
+          } else {
+            // Smooth transition for subsequent images
+            img.style.transition = "opacity 0.3s ease";
+            img.style.opacity = 0;
+
+            setTimeout(() => {
+              img.src = this.images[index];
+              img.alt = `${this.currentProject.title} Screenshot ${index + 1}`;
+              img.onload = () => {
+                img.style.opacity = 1;
+              };
+              // Fallback in case onload doesn't fire
+              setTimeout(() => {
+                img.style.opacity = 1;
+              }, 100);
+            }, 150);
+          }
 
           // Update dots
           Array.from(dots.children).forEach((dot, i) => {
@@ -1214,6 +1638,93 @@
           if (this.autoPlayInterval) {
             clearInterval(this.autoPlayInterval);
             this.startAutoPlay();
+          }
+        }
+
+        loadNavigation() {
+          const projectIds = Object.keys(PROJECTS_DATA);
+          const currentIndex = projectIds.indexOf(this.currentProject.id);
+
+          const prevProject =
+            currentIndex > 0 ? projectIds[currentIndex - 1] : null;
+          const nextProject =
+            currentIndex < projectIds.length - 1
+              ? projectIds[currentIndex + 1]
+              : null;
+
+          let navigation = '<div class="project-navigation">';
+
+          if (prevProject) {
+            const prevData = PROJECTS_DATA[prevProject];
+            navigation += `
+              <a href="project-detail.html?project=${prevProject}" class="nav-project prev">
+                <i class="fa-solid fa-chevron-left"></i>
+                <div>
+                  <span style="font-size: 0.85rem; color: #64748b;">Previous</span>
+                  <strong style="display: block; margin-top: 0.2rem;">${prevData.title}</strong>
+                </div>
+              </a>
+            `;
+          }
+
+          if (nextProject) {
+            const nextData = PROJECTS_DATA[nextProject];
+            navigation += `
+              <a href="project-detail.html?project=${nextProject}" class="nav-project next">
+                <div>
+                  <span style="font-size: 0.85rem; color: #64748b;">Next</span>
+                  <strong style="display: block; margin-top: 0.2rem;">${nextData.title}</strong>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            `;
+          }
+
+          navigation += "</div>";
+          document.getElementById("project-navigation-container").innerHTML =
+            navigation;
+        }
+
+        loadRelatedProjects() {
+          try {
+            const currentId = this.currentProject.id;
+            const allProjects = Object.values(PROJECTS_DATA);
+
+            // Get other projects (excluding current one)
+            const otherProjects = allProjects.filter(
+              (project) => project.id !== currentId
+            );
+
+            // Shuffle and take first 3
+            const shuffled = otherProjects.sort(() => Math.random() - 0.5);
+            const relatedProjects = shuffled.slice(0, 3);
+
+            if (relatedProjects.length > 0) {
+              const relatedHtml = `
+                <div class="related-projects">
+                  <h3>Related Projects</h3>
+                  <div class="related-grid">
+                    ${relatedProjects
+                      .map(
+                        (project) => `
+                      <a href="project-detail.html?project=${project.id}" class="related-card">
+                        <img src="${project.images[0]}" alt="${project.title}" />
+                        <div class="related-card-info">
+                          <h4>${project.title}</h4>
+                          <p>${project.subtitle}</p>
+                        </div>
+                      </a>
+                    `
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              `;
+              document.getElementById("related-projects-container").innerHTML =
+                relatedHtml;
+            }
+          } catch (error) {
+            console.error("Error loading related projects:", error);
           }
         }
       }
