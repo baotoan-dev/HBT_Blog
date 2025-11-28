@@ -58,21 +58,30 @@
     />
     <script src="js/projects-data.js"></script>
     <script src="js/project-generator.js"></script>
+    <script>
+      // Hamburger menu toggle for mobile
+      window.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const mainNav = document.getElementById("mainNav");
+        if (hamburgerBtn && mainNav) {
+          hamburgerBtn.addEventListener("click", function () {
+            mainNav.classList.toggle("open");
+          });
+          // Auto close menu when clicking a nav link (mobile)
+          const navLinks = mainNav.querySelectorAll("ul a");
+          navLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              mainNav.classList.remove("open");
+            });
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <header>
       <nav class="main-nav" id="mainNav">
         <div class="logo">HBT<span>Blog</span></div>
-        <button
-          class="hamburger"
-          id="hamburgerBtn"
-          aria-label="Menu"
-          style="display: none"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
         <ul>
           <li>
             <a href="#about"><i class="fa-solid fa-user"></i> About</a>
@@ -89,13 +98,25 @@
             <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
           </li>
         </ul>
-        <button
-          id="darkModeToggle"
-          aria-label="Toggle dark mode"
-          class="dark-toggle"
-        >
-          <i class="fa-solid fa-moon"></i>
-        </button>
+        <div class="nav-icons">
+          <button
+            class="hamburger"
+            id="hamburgerBtn"
+            aria-label="Menu"
+            style="display: none"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <button
+            id="darkModeToggle"
+            aria-label="Toggle dark mode"
+            class="dark-toggle"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
       </nav>
     </header>
     <section class="hero">

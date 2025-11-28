@@ -1,3 +1,27 @@
+/* Nav icons group for header */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-icons .hamburger,
+.nav-icons .dark-toggle {
+  padding: 0.5rem 0.7rem;
+  margin: 0;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.nav-icons .hamburger:active,
+.nav-icons .hamburger:focus,
+.nav-icons .dark-toggle:active,
+.nav-icons .dark-toggle:focus {
+  background: #e2e8f0;
+}
 /* Reset & base */
 html,
 body {
