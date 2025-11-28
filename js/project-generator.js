@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.pathname.includes("index.html") ||
     window.location.pathname === "/"
   ) {
-    const projectsContainer = document.querySelector("#projects .blog-grid");
+    const projectsContainer = document.getElementById("projects-container");
     if (projectsContainer) {
       const generator = new ProjectGenerator();
       projectsContainer.innerHTML = generator.generateProjectCards();
