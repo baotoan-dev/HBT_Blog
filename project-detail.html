@@ -360,8 +360,7 @@
         display: flex;
         flex-direction: column;
         gap: 2.5rem;
-        position: sticky;
-        top: 2rem;
+        /* No sticky, always full height */
       }
 
       .project-detail-info-box {
@@ -495,6 +494,10 @@
       .project-sidebar strong {
         color: #1a202c;
         font-weight: 600;
+      }
+
+      .project-main-content {
+        margin-top: 10px;
       }
 
       /* Enhanced Main Content */
@@ -1307,9 +1310,7 @@
             <div class="carousel-dots" id="carouselDots"></div>
           </div>
           <aside class="project-sidebar">
-            <ul id="project-sidebar-list">
-              <!-- Dynamic content will be loaded here -->
-            </ul>
+            <ul id="project-sidebar-list"></ul>
           </aside>
         </div>
 
@@ -1317,14 +1318,10 @@
           <h2>Project Overview</h2>
           <p id="project-overview">Loading project overview...</p>
 
-          <ul class="project-features" id="project-features">
-            <!-- Dynamic features will be loaded here -->
-          </ul>
+          <ul class="project-features" id="project-features"></ul>
 
           <h3>Key Achievements & Impact</h3>
-          <ul id="project-achievements">
-            <!-- Dynamic achievements will be loaded here -->
-          </ul>
+          <ul id="project-achievements"></ul>
 
           <h3>Technical Implementation</h3>
           <p id="project-technical">Loading technical details...</p>
@@ -1334,10 +1331,8 @@
             <span>Back to Projects</span>
           </a>
 
-          <!-- Project Navigation -->
           <div id="project-navigation-container"></div>
 
-          <!-- Related Projects -->
           <div id="related-projects-container"></div>
         </section>
       </div>
@@ -1459,6 +1454,7 @@
 
         loadSidebar(sidebarData) {
           const sidebarList = document.getElementById("project-sidebar-list");
+          if (!sidebarList) return;
           sidebarList.innerHTML = "";
 
           const items = [
@@ -1490,11 +1486,15 @@
             },
           ];
 
+          let hasContent = false;
           items.forEach((item) => {
+            if (!item.value) return;
+            hasContent = true;
             const li = document.createElement("li");
-            const content = item.link
-              ? `<strong>${item.label}:</strong><br><a href="${item.link}" style="color: #667eea; font-weight: 600; text-decoration: none;" target="_blank">${item.value}</a>`
-              : `<strong>${item.label}:</strong><br>${item.value}`;
+            const content =
+              item.link && item.value
+                ? `<strong>${item.label}:</strong><br><a href="${item.link}" style="color: #667eea; font-weight: 600; text-decoration: none;" target="_blank">${item.value}</a>`
+                : `<strong>${item.label}:</strong><br>${item.value}`;
 
             li.innerHTML = `
               <i class="${item.icon}"></i>
@@ -1502,6 +1502,13 @@
             `;
             sidebarList.appendChild(li);
           });
+          // Hide sidebar if no content
+          const aside = sidebarList.parentElement;
+          if (hasContent) {
+            aside.style.display = "block";
+          } else {
+            aside.style.display = "none";
+          }
         }
 
         loadFeatures(features) {
