@@ -15,6 +15,11 @@
     <title>Portfolio IT - Your Name</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>
@@ -31,19 +36,60 @@
           <span></span>
         </button>
         <ul>
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#skills">Kỹ năng</a></li>
-          <li><a href="#projects">Dự án</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
+          <li>
+            <a href="#about"><i class="fa-solid fa-user"></i> Giới thiệu</a>
+          </li>
+          <li>
+            <a href="#skills"
+              ><i class="fa-solid fa-laptop-code"></i> Kỹ năng</a
+            >
+          </li>
+          <li>
+            <a href="#projects"
+              ><i class="fa-solid fa-diagram-project"></i> Dự án</a
+            >
+          </li>
+          <li>
+            <a href="#contact"><i class="fa-solid fa-envelope"></i> Liên hệ</a>
+          </li>
         </ul>
+        <button
+          id="darkModeToggle"
+          aria-label="Chuyển dark mode"
+          class="dark-toggle"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
       </nav>
     </header>
     <section class="hero">
+      <svg
+        class="hero-blob"
+        viewBox="0 0 600 600"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g transform="translate(300,300)">
+          <path
+            d="M120.2,-153.2C154.2,-120.2,176.2,-77.2,180.2,-33.2C184.2,10.8,170.2,55.8,146.2,97.8C122.2,139.8,88.2,178.8,45.2,191.8C2.2,204.8,-50.8,191.8,-97.8,172.8C-144.8,153.8,-185.8,128.8,-200.8,89.8C-215.8,50.8,-204.8,-2.2,-187.8,-49.2C-170.8,-96.2,-147.8,-137.2,-112.8,-170.2C-77.8,-203.2,-38.9,-228.1,2.2,-230.2C43.3,-232.3,86.6,-211.3,120.2,-153.2Z"
+            fill="#ffe082"
+            fill-opacity="0.18"
+          />
+        </g>
+      </svg>
       <div class="hero-content">
+        <div class="avatar-container">
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Avatar"
+            class="avatar"
+          />
+        </div>
         <h1>Xin chào, tôi là <span class="highlight">Your Name</span></h1>
-        <p class="subtitle">Web Developer | Software Engineer</p>
-        <a href="#contact" class="btn-main">Liên hệ ngay</a>
+        <p class="subtitle"><span id="typewriter"></span></p>
+        <a href="#contact" class="btn-main ripple">Liên hệ ngay</a>
       </div>
+      <div id="parallax-bg"></div>
+      <div id="progress-bar"></div>
     </section>
     <main class="main-layout">
       <div class="content">
@@ -76,10 +122,23 @@
         <section id="skills" class="card">
           <h2>Kỹ năng</h2>
           <ul class="skills-list">
-            <li>HTML5, CSS3, JavaScript</li>
-            <li>React, Node.js</li>
-            <li>Git, Github</li>
-            <li>SEO, Responsive Design</li>
+            <li>
+              <i class="fa-brands fa-html5"></i> HTML5,
+              <i class="fa-brands fa-css3-alt"></i> CSS3,
+              <i class="fa-brands fa-js"></i> JavaScript
+            </li>
+            <li>
+              <i class="fa-brands fa-react"></i> React,
+              <i class="fa-brands fa-node-js"></i> Node.js
+            </li>
+            <li>
+              <i class="fa-brands fa-git-alt"></i> Git,
+              <i class="fa-brands fa-github"></i> Github
+            </li>
+            <li>
+              <i class="fa-solid fa-magnifying-glass"></i> SEO,
+              <i class="fa-solid fa-mobile-screen"></i> Responsive Design
+            </li>
           </ul>
         </section>
         <section id="projects">
@@ -144,8 +203,13 @@
             <button type="submit">Gửi</button>
           </form>
           <div class="contact-info">
-            <p>Email: your-email@example.com</p>
-            <p>LinkedIn: <a href="#" target="_blank">your-linkedin</a></p>
+            <p>
+              <i class="fa-solid fa-envelope"></i> Email: your-email@example.com
+            </p>
+            <p>
+              <i class="fa-brands fa-linkedin"></i> LinkedIn:
+              <a href="#" target="_blank">your-linkedin</a>
+            </p>
           </div>
         </section>
       </div>
@@ -165,6 +229,8 @@
       </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script>
       // Hamburger menu toggle
       const hamburgerBtn = document.getElementById("hamburgerBtn");
@@ -214,6 +280,76 @@
           }
         });
       });
+
+      // Typewriter effect
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.Typed) {
+          new Typed("#typewriter", {
+            strings: [
+              "Web Developer | Software Engineer",
+              "Yêu thích UI/UX & Animation",
+              "Đam mê công nghệ mới",
+              "Sẵn sàng hợp tác dự án!",
+            ],
+            typeSpeed: 45,
+            backSpeed: 30,
+            backDelay: 1800,
+            loop: true,
+          });
+        }
+      });
+
+      // Dark mode toggle
+      const darkToggle = document.getElementById("darkModeToggle");
+      darkToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+        darkToggle.classList.toggle("active");
+        darkToggle.innerHTML = document.body.classList.contains("dark-mode")
+          ? '<i class="fa-solid fa-sun"></i>'
+          : '<i class="fa-solid fa-moon"></i>';
+      });
+
+      // Progress bar scroll
+      const progressBar = document.getElementById("progress-bar");
+      window.addEventListener("scroll", function () {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = percent + "%";
+      });
+
+      // Parallax background
+      const parallaxBg = document.getElementById("parallax-bg");
+      window.addEventListener("scroll", function () {
+        if (parallaxBg) {
+          parallaxBg.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+        }
+      });
+
+      // Ripple effect for buttons
+      document.querySelectorAll(".ripple").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          const circle = document.createElement("span");
+          circle.className = "ripple-effect";
+          const rect = btn.getBoundingClientRect();
+          circle.style.left = e.clientX - rect.left + "px";
+          circle.style.top = e.clientY - rect.top + "px";
+          btn.appendChild(circle);
+          setTimeout(() => circle.remove(), 600);
+        });
+      });
+
+      // Scroll reveal animation
+      if (window.ScrollReveal) {
+        ScrollReveal().reveal(".card, .project-card, .skills-list li", {
+          distance: "40px",
+          duration: 900,
+          easing: "cubic-bezier(.23,1.01,.32,1)",
+          origin: "bottom",
+          interval: 120,
+          reset: false,
+        });
+      }
     </script>
   </body>
 </html>
