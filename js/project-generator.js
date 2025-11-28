@@ -6,54 +6,27 @@ class ProjectGenerator {
 
   // Generate project cards for index.html
   generateProjectCards() {
-    const projectsData = [
-      {
-        id: "product-landing",
-        title: "Product Landing Page",
-        description: "Modern, responsive landing page with GSAP animations",
-        image:
-          "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-        tags: ["HTML5", "CSS3", "JavaScript", "GSAP"],
-      },
-      {
-        id: "e-commerce-dashboard",
-        title: "E-commerce Dashboard",
-        description: "Real-time analytics dashboard with data visualization",
-        image:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-        tags: ["React", "Node.js", "MongoDB", "Chart.js"],
-      },
-      {
-        id: "mobile-banking-app",
-        title: "Mobile Banking App",
-        description: "Secure mobile banking with biometric authentication",
-        image:
-          "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80",
-        tags: ["React Native", "TypeScript", "Redux"],
-      },
-      {
-        id: "ai-chat-platform",
-        title: "AI Chat Platform",
-        description:
-          "Intelligent conversational AI with multi-model integration",
-        image:
-          "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80",
-        tags: ["Next.js", "Python", "OpenAI", "FastAPI"],
-      },
-    ];
-
-    return projectsData
-      .map(
-        (project) => `
+    // Render from dynamic PROJECTS_DATA
+    return Object.values(this.projects)
+      .map((project) => {
+        // Fallbacks for image, tags, description
+        const image =
+          project.images && project.images[0]
+            ? project.images[0].replace("w=1200", "w=600")
+            : "https://via.placeholder.com/600x400?text=No+Image";
+        const tags =
+          project.sidebar && project.sidebar.techStack
+            ? project.sidebar.techStack.split(",").map((t) => t.trim())
+            : [];
+        const description = project.subtitle || project.content?.overview || "";
+        return `
       <article class="project-card">
-        <img src="${project.image}" alt="${project.title}" />
+        <img src="${image}" alt="${project.title}" />
         <div class="project-info">
           <h3 class="project-title">${project.title}</h3>
-          <p>${project.description}</p>
+          <p>${description}</p>
           <div class="project-tags">
-            ${project.tags
-              .map((tag) => `<span class="tag">${tag}</span>`)
-              .join("")}
+            ${tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
           </div>
           <a href="project-detail.html?project=${
             project.id
@@ -62,8 +35,8 @@ class ProjectGenerator {
           </a>
         </div>
       </article>
-    `
-      )
+    `;
+      })
       .join("");
   }
 
