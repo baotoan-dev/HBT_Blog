@@ -257,7 +257,10 @@ const PROJECTS_DATA = {
   },
 };
 
-// Export for use in other files
+// Export for use in other files (browser and Node.js)
+if (typeof window !== "undefined") {
+  window.PROJECTS_DATA = PROJECTS_DATA;
+}
 if (typeof module !== "undefined" && module.exports) {
   module.exports = PROJECTS_DATA;
 }
