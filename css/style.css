@@ -20,7 +20,58 @@ body.dark-mode .project-card,
 body.dark-mode footer {
   background: #23283a !important;
   color: #e0e0e0;
-  box-shadow: 0 2px 16px #0002;
+  box-shadow: 0 4px 32px #0004;
+  border-radius: 18px;
+}
+body.dark-mode .card {
+  background: linear-gradient(120deg, #23283a 90%, #2d3347 100%) !important;
+  box-shadow: 0 8px 40px #0005, 0 2px 16px #0077ff11;
+}
+body.dark-mode #contact-form input,
+body.dark-mode #contact-form textarea {
+  background: #23283a;
+  color: #fff;
+  border: 1.5px solid #333b54;
+  box-shadow: 0 2px 8px #0002;
+}
+body.dark-mode #contact-form input:focus,
+body.dark-mode #contact-form textarea:focus {
+  background: #23283a;
+  color: #ffe082;
+  border-color: #0077ff;
+}
+body.dark-mode #contact-form button {
+  background: linear-gradient(90deg, #0077ff 0%, #00c6ff 100%);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #0077ff33;
+}
+body.dark-mode #contact-form button:hover {
+  background: linear-gradient(90deg, #ff4c60 0%, #0077ff 100%);
+  color: #fff;
+}
+body.dark-mode .contact-info {
+  color: #ffe082;
+}
+body.dark-mode .contact-info i.fa-envelope {
+  color: #ffe082;
+}
+body.dark-mode .contact-info i.fa-linkedin {
+  color: #0a66c2;
+  background: #fff;
+  border-radius: 3px;
+  padding: 2px 3px;
+  font-size: 1.1em;
+  margin-right: 0.3em;
+}
+body.dark-mode .contact-info a {
+  color: #ffe082;
+  text-decoration: underline;
+}
+body.dark-mode .card h2 {
+  color: #2196f3;
+  text-shadow: 0 2px 8px #0077ff22;
 }
 body.dark-mode .main-nav ul li a,
 body.dark-mode .footer-right a {

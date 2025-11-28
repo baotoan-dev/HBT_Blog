@@ -1,30 +1,22 @@
-// main.js - Portfolio IT chuyên nghiệp
-
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Cảm ơn bạn đã liên hệ! (Demo, hãy thay thế bằng xử lý thực tế)");
-    this.reset();
-  });
+// main.js - Professional IT Portfolio
 
 // Contact form demo
 document
   .getElementById("contact-form")
   ?.addEventListener("submit", function (e) {
     e.preventDefault();
-    alert("Cảm ơn bạn đã liên hệ! (Demo, hãy thay thế bằng xử lý thực tế)");
+    alert("Thank you for contacting! (Demo, please replace with real handler)");
     this.reset();
   });
 
-// Typewriter effect (nếu chưa có)
+// Typewriter effect (if not already initialized)
 if (window.Typed && document.getElementById("typewriter")) {
   new Typed("#typewriter", {
     strings: [
       "Web Developer | Software Engineer",
-      "Yêu thích UI/UX & Animation",
-      "Đam mê công nghệ mới",
-      "Sẵn sàng hợp tác dự án!",
+      "Passionate about UI/UX & Animation",
+      "Enthusiastic about new technologies",
+      "Ready for collaboration!",
     ],
     typeSpeed: 45,
     backSpeed: 30,
@@ -76,5 +68,3 @@ document.querySelectorAll(".ripple").forEach((btn) => {
     setTimeout(() => circle.remove(), 600);
   });
 });
-
-// Scroll reveal animation (đã tắt để tránh lỗi ẩn nội dung)
