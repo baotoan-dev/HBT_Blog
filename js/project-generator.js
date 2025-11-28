@@ -1,7 +1,13 @@
 // Dynamic Project Generator
 class ProjectGenerator {
   constructor() {
-    this.projects = PROJECTS_DATA;
+    // Đảm bảo lấy từ window nếu có, tránh lỗi undefined khi deploy static
+    this.projects =
+      typeof window !== "undefined" && window.PROJECTS_DATA
+        ? window.PROJECTS_DATA
+        : typeof PROJECTS_DATA !== "undefined"
+        ? PROJECTS_DATA
+        : {};
   }
 
   // Generate project cards for index.html
