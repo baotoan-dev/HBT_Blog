@@ -484,8 +484,6 @@
         display: block;
         transition: transform 0.4s ease, opacity 0.3s ease;
         background: #f8fafc;
-        min-height: 320px;
-        max-height: 480px;
       }
 
       .carousel:hover img {
@@ -984,6 +982,15 @@
           <li><a href="index.html#projects">Projects</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
+        <div class="nav-icons">
+          <button
+            id="darkModeToggle"
+            aria-label="Toggle dark mode"
+            class="dark-toggle"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
       </nav>
     </header>
     <section class="project-hero" id="project-hero">
@@ -1486,5 +1493,6 @@
       // Initialize the project detail loader
       new ProjectDetailLoader();
     </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
