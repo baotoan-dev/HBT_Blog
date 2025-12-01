@@ -128,25 +128,25 @@ const PROJECTS_DATA = {
     },
   },
 
-  "mobile-banking-app": {
-    id: "mobile-banking-app",
-    title: "Mobile Banking App UI",
+  "maple-eduverse": {
+    id: "maple-eduverse",
+    title: "Maple Eduverse (TimeTable)",
     subtitle:
-      "Secure and intuitive mobile banking interface with biometric authentication and real-time transactions",
+      "Next-gen mobile app for personalized learning schedules and interactive study tools",
     hero: {
       gradient:
         "linear-gradient(135deg, #6c5ce7 0%, #fd79a8 50%, #fdcb6e 100%)",
     },
     images: [
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=85",
+      "./assets/edu/maple-1.png",
+      "./assets/edu/maple-2.png",
+      "./assets/edu/maple-3.png",
     ],
     sidebar: {
       role: "Senior Mobile UI/UX Designer",
       duration: "10 weeks (Jun - Aug 2024)",
-      techStack: "React Native, TypeScript, Redux, Reanimated",
+      techStack:
+        "NuxtJS, NestJS, Firebase, Figma, Mongodb, Redis, Docker, Nginx, CI/CD, AWS",
       teamSize: "5 developers, 3 designers, 1 security expert",
       status: "App Store Ready",
       demoLink: "https://example.com/banking-prototype",
@@ -192,28 +192,32 @@ const PROJECTS_DATA = {
     },
   },
 
-  "ai-chat-platform": {
-    id: "ai-chat-platform",
-    title: "AI Chat Platform",
+  "mighty-id-hrm": {
+    id: "mighty-id-hrm",
+    title: "Mighty.ID HRM System",
     subtitle:
-      "Intelligent conversational AI platform with natural language processing and multi-model integration",
+      "Comprehensive HR management platform with employee self-service and performance tracking",
     hero: {
       gradient:
         "linear-gradient(135deg, #00d2ff 0%, #3a7bd5 50%, #8360c3 100%)",
     },
     images: [
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=1200&q=85",
+      "./assets/hrm/hrm-1.png",
+      "./assets/hrm/hrm-2.png",
+      "./assets/hrm/hrm-3.png",
+      "./assets/hrm/hrm-4.png",
+      "./assets/hrm/hrm-5.png",
+      "./assets/hrm/hrm-6.png",
     ],
     sidebar: {
-      role: "AI/ML Engineer & Frontend Architect",
-      duration: "12 weeks (Mar - May 2024)",
-      techStack: "Next.js, Python, FastAPI, OpenAI API, WebSocket",
-      teamSize: "6 engineers, 2 ML specialists, 1 designer",
-      status: "Beta Testing Phase",
-      demoLink: "https://example.com/ai-chat-demo",
+      role: "Full-stack Developer & UX Researcher",
+      // 07/2024 - 11/2024
+      duration: "12 weeks (Jul - Oct 2024)",
+      techStack:
+        "Python, NestJS, NuxtJS, Redis, MongoDB, Docker, Nginx, CI/CD, AWS, Socket.io",
+      teamSize: "6 engineers, 2 designers, 1 HR consultant",
+      status: "Enterprise Ready",
+      demoLink: "https://example.com/hrm-demo",
     },
     content: {
       overview:

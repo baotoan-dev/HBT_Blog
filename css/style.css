@@ -613,8 +613,8 @@ header {
   background: linear-gradient(120deg, #fff 80%, #e3f0ff 100%);
   border-radius: 18px;
   box-shadow: 0 4px 32px rgba(0, 119, 255, 0.07), 0 1.5px 8px #ff4c6011;
-  padding: 2.2rem 2rem 2rem 2rem;
-  margin-bottom: 1.5rem;
+  padding: 2.2rem 2.2rem 1.7rem 2.2rem !important;
+  margin-bottom: 2.2rem !important;
   transition: box-shadow 0.22s, transform 0.18s;
   position: relative;
   overflow: hidden;
@@ -635,6 +635,7 @@ header {
 }
 .card h2 {
   margin-top: 0;
+  margin-bottom: 1.3rem !important;
   color: #0077ff;
   font-size: 2rem;
   font-weight: 800;
@@ -696,6 +697,7 @@ header {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 1.5rem;
+  align-items: stretch;
 }
 .project-card {
   background: linear-gradient(120deg, #fff 80%, #e3f0ff 100%);
@@ -706,6 +708,8 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 100%;
+  min-height: 480px;
 }
 .project-card:hover {
   box-shadow: 0 8px 40px 0 #0077ff33, 0 2px 16px #ff4c6033;
@@ -723,6 +727,12 @@ header {
   padding: 1.2rem;
   position: relative;
   z-index: 1;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.project-info .project-tags {
+  margin-top: auto;
 }
 .project-title {
   margin: 0 0 0.5rem 0;
@@ -746,6 +756,7 @@ header {
   transition: background 0.22s, color 0.22s, transform 0.16s;
   position: relative;
   overflow: hidden;
+  align-self: flex-start;
 }
 .btn-outline::after {
   content: "";
@@ -781,6 +792,9 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
   }
+  .project-card {
+    min-height: 420px;
+  }
 }
 @media (max-width: 600px) {
   .blog-grid {
@@ -789,6 +803,9 @@ header {
   }
   .project-info {
     padding: 0.7rem;
+  }
+  .project-card {
+    min-height: 0;
   }
 }
 
