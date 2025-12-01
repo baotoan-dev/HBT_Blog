@@ -1,4 +1,49 @@
 @import url("fade-text.css");
+
+/* Skills Section Styling */
+.skills-title {
+  color: #1976d2;
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.skill-box {
+  background: #f4faff;
+  border-radius: 14px;
+  padding: 1em 1.2em 0.7em 1.2em;
+  margin-bottom: 0.2em;
+  transition: all 0.3s ease;
+}
+
+.skill-box-title {
+  font-weight: 700;
+  color: #1976d2;
+  font-size: 1.08em;
+  margin-bottom: 0.2em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Dark mode for Skills */
+body.dark-mode .skills-title {
+  color: #64b5f6;
+}
+
+body.dark-mode .skill-box {
+  background: #2a2f42;
+  border: 1px solid #3a4058;
+}
+
+body.dark-mode .skill-box-title {
+  color: #64b5f6;
+}
+
+body.dark-mode .skill-box span {
+  color: #e0e0e0 !important;
+}
+
 /* Nav icons group for header */
 .nav-icons {
   display: flex;
