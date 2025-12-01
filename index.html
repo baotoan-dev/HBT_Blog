@@ -50,6 +50,11 @@
         line-height: 1.6;
         margin-bottom: 1rem;
       }
+
+      #objective-text,
+      #long-term-goal-text {
+        font-weight: bold;
+      }
     </style>
     <link
       rel="stylesheet"
@@ -116,11 +121,7 @@
       </svg>
       <div class="hero-content">
         <div class="avatar-container">
-          <img
-            src="https://randomuser.me/api/portraits/men/32.jpg"
-            alt="Avatar"
-            class="avatar"
-          />
+          <img src="./assets/avatar-real.jpg" alt="Avatar" class="avatar" />
         </div>
         <h1>Hello, I am <span class="highlight">Bao Toan</span></h1>
         <p class="subtitle">
@@ -133,18 +134,39 @@
     </section>
     <main class="main-layout">
       <div class="content">
-        <section id="about" class="card">
-          <h2>About</h2>
+        <section id="objective" class="card">
+          <h2>Objective</h2>
           <p>
-            A short description about myself, experience, and career
-            orientation.
+            <span id="objective-text">Short-term goal: </span> Strengthen
+            backend engineering expertise by mastering scalable system
+            architecture, high-performance backend development, and
+            industry-standard coding practices within the next year..
           </p>
+          <p>
+            <span id="long-term-goal-text">Long-term goal: </span> Advance into
+            a senior-level full-stack engineering leadership role within five
+            years, contributing to architectural decisions, driving innovation,
+            and mentoring engineers to deliver high-impact solutions.
+          </p>
+        </section>
+        <section id="education" class="card">
+          <h2>Education</h2>
+          <ul style="margin-bottom: 0">
+            <li>
+              <strong>University:</strong> Ho Chi Minh City University of
+              Technology and Education (HCMUTE)
+            </li>
+            <li><strong>Major:</strong> Information Technology</li>
+            <li>
+              <strong>Degree:</strong> Bachelor of Engineering (Graduated: 2024)
+            </li>
+          </ul>
         </section>
         <section id="experience" class="card">
           <h2>Work Experience</h2>
           <div class="exp-list">
             <div class="exp-item">
-              <h3>ABC Company</h3>
+              <h3>VIET NAM GOLDEN LOTUS MTV COMPANY LIMITED</h3>
               <span>Frontend Developer (2022 - 2025)</span>
               <ul>
                 <li>Developed web interfaces with React, Next.js.</li>
@@ -155,13 +177,44 @@
               </ul>
             </div>
             <div class="exp-item">
-              <h3>XYZ Company</h3>
-              <span>Web Developer (2020 - 2022)</span>
-              <ul>
-                <li>
-                  Built internal management systems using Node.js, MongoDB.
+              <h3
+                style="
+                  color: #e53935;
+                  margin-bottom: 0.2em;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5em;
+                "
+              >
+                <i class="fa-solid fa-server" style="color: #2196f3"></i>
+                MIGHTYID VIETNAM JSC
+              </h3>
+              <div
+                style="font-size: 1.05em; color: #64748b; margin-bottom: 0.3em"
+              >
+                <strong>Backend Developer</strong>
+                <span style="font-weight: 400">| 03/2024 - 07/2025</span>
+              </div>
+              <ul style="margin-left: 1.2em; margin-bottom: 0.5em">
+                <li style="margin-bottom: 0.3em; line-height: 1.6">
+                  Develop and optimize core system modules – Design, build, and
+                  maintain HRM, CRM, and ERP functionalities for scalability and
+                  performance.
                 </li>
-                <li>Deployed and maintained corporate websites.</li>
+                <li style="margin-bottom: 0.3em; line-height: 1.6">
+                  Implement secure authentication & authorization – Use RBAC,
+                  OAuth, and JWT for enhanced data security and access control.
+                </li>
+                <li style="margin-bottom: 0.3em; line-height: 1.6">
+                  Develop and maintain automated testing frameworks – Build
+                  unit, integration, and performance tests integrated with CI/CD
+                  to ensure system stability.
+                </li>
+                <li style="margin-bottom: 0.3em; line-height: 1.6">
+                  Integrate third-party services and APIs – Connect external
+                  platforms like payment gateways, AI services, and cloud
+                  storage to extend system capabilities.
+                </li>
               </ul>
             </div>
           </div>

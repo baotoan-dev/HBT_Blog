@@ -10,20 +10,29 @@
       this.reset();
     });
 
-  // Typewriter effect (if not already initialized)
-  if (window.Typed && document.getElementById("typewriter")) {
-    new Typed("#typewriter", {
-      strings: [
-        "Web Developer | Software Engineer",
-        "Passionate about UI/UX & Animation",
-        "Enthusiastic about new technologies",
-        "Ready for collaboration!",
-      ],
-      typeSpeed: 45,
-      backSpeed: 30,
-      backDelay: 1800,
-      loop: true,
-    });
+  // Smooth fade text rotation effect (replaces Typed.js)
+  const typewriterEl = document.getElementById("typewriter");
+  if (typewriterEl) {
+    const texts = [
+      "Software Engineer | Problem Solver",
+      "Software Engineer | Building scalable web applications",
+      "Software Engineer | Lover of clean code & best practices",
+      "Software Engineer | Always learning new technologies",
+      "Software Engineer | Let's create something impactful!",
+    ];
+    let idx = 0;
+    typewriterEl.textContent = texts[0];
+    typewriterEl.classList.add("fade-in");
+    setInterval(() => {
+      typewriterEl.classList.remove("fade-in");
+      typewriterEl.classList.add("fade-out");
+      setTimeout(() => {
+        idx = (idx + 1) % texts.length;
+        typewriterEl.textContent = texts[idx];
+        typewriterEl.classList.remove("fade-out");
+        typewriterEl.classList.add("fade-in");
+      }, 400); // fade out duration
+    }, 3200); // total time per text
   }
 
   // Dark mode toggle
