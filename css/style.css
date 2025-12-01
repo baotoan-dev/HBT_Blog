@@ -96,10 +96,10 @@ body.dark-mode footer {
   border-radius: 18px;
 }
 body.dark-mode .project-sidebar {
-  background: #23283a !important;
-  color: #e0e0e0 !important;
-  border: 1px solid #333b54 !important;
-  box-shadow: 0 2px 16px #0003;
+  background: rgba(35, 40, 58, 0.98) !important;
+  border: 1.5px solid #3a4058 !important;
+  color: #ffe082 !important;
+  box-shadow: 0 8px 40px #0007, 0 2px 16px #ffe08211;
 }
 body.dark-mode .project-sidebar li {
   background: #23283a !important;
@@ -113,6 +113,16 @@ body.dark-mode .project-sidebar li:hover {
 }
 body.dark-mode .project-sidebar i {
   color: #ffe082 !important;
+}
+body.dark-mode .project-sidebar strong {
+  color: #ffe082 !important;
+}
+body.dark-mode .project-sidebar span {
+  color: #e0e0e0 !important;
+}
+body.dark-mode .project-sidebar a {
+  color: #82b1ff !important;
+  text-decoration: underline;
 }
 body.dark-mode .project-main-content.card {
   background: linear-gradient(120deg, #23283a 90%, #2d3347 100%) !important;
