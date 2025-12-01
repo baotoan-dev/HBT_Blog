@@ -29,13 +29,28 @@
 
   // Dark mode toggle
   const darkToggle = document.getElementById("darkModeToggle");
+  // Auto-apply dark mode from cache
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    if (darkToggle) {
+      darkToggle.classList.add("active");
+      darkToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    }
+  } else {
+    document.body.classList.remove("dark-mode");
+    if (darkToggle) {
+      darkToggle.classList.remove("active");
+      darkToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    }
+  }
   if (darkToggle) {
     darkToggle.addEventListener("click", function () {
-      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.toggle("dark-mode");
       darkToggle.classList.toggle("active");
-      darkToggle.innerHTML = document.body.classList.contains("dark-mode")
+      darkToggle.innerHTML = isDark
         ? '<i class="fa-solid fa-sun"></i>'
         : '<i class="fa-solid fa-moon"></i>';
+      localStorage.setItem("theme", isDark ? "dark" : "light");
     });
   }
 
