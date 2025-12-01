@@ -211,7 +211,6 @@ const PROJECTS_DATA = {
     ],
     sidebar: {
       role: "Full-stack Developer & UX Researcher",
-      // 07/2024 - 11/2024
       duration: "12 weeks (Jul - Oct 2024)",
       techStack:
         "Python, NestJS, NuxtJS, Redis, MongoDB, Docker, Nginx, CI/CD, AWS, Socket.io",
@@ -221,42 +220,47 @@ const PROJECTS_DATA = {
     },
     content: {
       overview:
-        "An advanced AI-powered chat platform that integrates multiple language models to provide intelligent, context-aware conversations. Features real-time processing, multi-modal interactions, and sophisticated prompt engineering to deliver human-like conversational experiences for various use cases.",
+        "A comprehensive HR software automating attendance, payroll, leave requests, and work schedules. It calculates salaries, bonuses, and benefits, offering analytics and reports to support decision-making for companies like Talaw, AMVC, and MIGHTYID.",
       features: [
         {
-          icon: "fa-solid fa-brain",
-          title: "Multi-Model AI Integration",
+          icon: "fa-solid fa-calendar-check",
+          title: "Automated Attendance Tracking",
         },
         {
-          icon: "fa-solid fa-comments",
-          title: "Real-time Chat Processing",
+          icon: "fa-solid fa-money-bill-wave",
+          title: "Payroll Management System",
         },
         {
-          icon: "fa-solid fa-language",
-          title: "Multi-language Support",
+          icon: "fa-solid fa-user-clock",
+          title: "Leave & Time-off Requests",
         },
         {
-          icon: "fa-solid fa-file-alt",
-          title: "Document Analysis & Q&A",
+          icon: "fa-solid fa-chart-line",
+          title: "Performance Tracking & Analytics",
         },
         {
-          icon: "fa-solid fa-image",
-          title: "Image Generation & Analysis",
+          icon: "fa-solid fa-users-cog",
+          title: "Employee Self-Service Portal",
         },
         {
-          icon: "fa-solid fa-code",
-          title: "Code Generation & Review",
+          icon: "fa-solid fa-shield-alt",
+          title: "Role-Based Access Control",
         },
+      ],
+      responsibilities: [
+        "Optimize schemas and queries for large datasets on employee records, payroll, and attendance.",
+        "Create RESTful APIs and WebSocket services for backend-frontend communication, ensuring authentication and data integrity.",
+        "Set up testing frameworks, integrate with CI/CD, and ensure code quality via reviews and automated deployment",
       ],
       achievements: [
-        "Achieved 95% accuracy in intent recognition across 12 languages",
-        "Reduced response latency to under 500ms with optimized model serving",
-        "Processed over 1M+ conversations with 99.5% uptime reliability",
-        "Implemented advanced context memory spanning 100+ conversation turns",
-        "Created custom fine-tuned models improving domain-specific performance by 40%",
+        "Automated payroll processing, reducing errors by 90%",
+        "Improved employee satisfaction with self-service features",
+        "Streamlined attendance tracking, saving 20 hours/week in manual work",
+        "Enhanced decision-making with real-time HR analytics",
+        "Successfully deployed in multiple enterprises with 1000+ employees",
       ],
       technical:
-        "Built with Next.js 14 and TypeScript frontend, Python FastAPI backend with async processing. Integrated OpenAI GPT-4, Anthropic Claude, and custom fine-tuned models. Implemented WebSocket connections for real-time streaming, Redis for session management, and PostgreSQL for conversation storage. Features advanced prompt engineering, context chunking, and multi-modal processing capabilities.",
+        "Built with a microservices architecture using Python Flask for the NLP engine and Node.js for API services. Utilizes TensorFlow and Hugging Face Transformers for model development, deployed on AWS with Docker containers. Features WebSocket integration for real-time chat, Redis for session management, and PostgreSQL for conversation logging.",
     },
   },
 };

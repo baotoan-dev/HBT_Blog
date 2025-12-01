@@ -1084,6 +1084,9 @@
 
           <ul class="project-features" id="project-features"></ul>
 
+          <h3>Key Responsibilities</h3>
+          <ul id="project-responsibilities"></ul>
+
           <h3>Key Achievements & Impact</h3>
           <ul id="project-achievements"></ul>
 
@@ -1217,6 +1220,9 @@
           // Load features
           this.loadFeatures(project.content.features);
 
+          // Load responsibilities
+          this.loadResponsibilities(project.content.responsibilities);
+
           // Load achievements
           this.loadAchievements(project.content.achievements);
         }
@@ -1283,6 +1289,19 @@
               <span>${feature.title}</span>
             `;
             featuresContainer.appendChild(li);
+          });
+        }
+
+        loadResponsibilities(responsibilities) {
+          const responsibilitiesContainer = document.getElementById(
+            "project-responsibilities"
+          );
+          responsibilitiesContainer.innerHTML = "";
+          if (!responsibilities || !responsibilities.length) return;
+          responsibilities.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            responsibilitiesContainer.appendChild(li);
           });
         }
 
