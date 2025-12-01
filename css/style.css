@@ -360,6 +360,30 @@ body.dark-mode .footer-right i {
   color: #ffe082;
 }
 
+/* Dark mode for Related Projects section */
+body.dark-mode .related-projects {
+  border-top: 1px solid #333b54;
+}
+body.dark-mode .related-projects h3 {
+  color: #ffe082;
+}
+body.dark-mode .related-card {
+  background: rgba(35, 40, 58, 0.92);
+  color: #e0e0e0;
+  border: 1.5px solid #3a4058;
+}
+body.dark-mode .related-card:hover {
+  color: #ffe082;
+  border-color: #ffe082;
+  box-shadow: 0 16px 32px #ffe08222;
+}
+body.dark-mode .related-card h4 {
+  color: #ffe082;
+}
+body.dark-mode .related-card p {
+  color: #b0b8c9;
+}
+
 *,
 *::before,
 *::after {
