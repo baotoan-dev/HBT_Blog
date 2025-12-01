@@ -969,7 +969,9 @@
         }
       }
 
-      /* === End Premium Professional CSS === */
+      .logo {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -1111,6 +1113,11 @@
     </footer>
 
     <script>
+      const logo = document.querySelector(".logo");
+      logo.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+
       // Project Detail Dynamic Loader
       class ProjectDetailLoader {
         constructor() {

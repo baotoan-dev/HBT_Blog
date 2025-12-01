@@ -55,6 +55,10 @@
       #long-term-goal-text {
         font-weight: bold;
       }
+
+      .logo {
+        cursor: pointer;
+      }
     </style>
     <link
       rel="stylesheet"
@@ -211,7 +215,7 @@
               <div
                 style="font-size: 1.05em; color: #64748b; margin-bottom: 0.3em"
               >
-                <strong>Backend Developer</strong>
+                <strong>Full-stack Developer</strong>
                 <span style="font-weight: 400">| 01/2024 - 01/2025</span>
               </div>
               <ul style="margin-left: 1.2em; margin-bottom: 0.5em">
@@ -474,8 +478,13 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
       // Hamburger menu toggle
+      const logo = document.querySelector(".logo");
       const hamburgerBtn = document.getElementById("hamburgerBtn");
       const mainNav = document.getElementById("mainNav");
+      logo.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
       function updateHamburgerDisplay() {
         if (window.innerWidth <= 600) {
           hamburgerBtn.style.display = "flex";
