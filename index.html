@@ -446,6 +446,7 @@
           <form id="contact-form">
             <input
               type="text"
+              id="name-input"
               name="name"
               placeholder="Full Name"
               required
@@ -453,12 +454,14 @@
             />
             <input
               type="email"
+              id="email-input"
               name="email"
               placeholder="Email"
               required
               autocomplete="email"
             />
             <textarea
+              id="message-input"
               name="message"
               placeholder="Message"
               required
@@ -491,43 +494,63 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="js/main.js"></script>
     <script>
+      // EmailJS Contact Form Handler
       document.addEventListener("DOMContentLoaded", function () {
+        // Initialize EmailJS with your public key
         emailjs.init("F3RkEDEtQziwbwfFJ");
-        const form = document.getElementById("contact-form");
-        if (form) {
-          form.addEventListener("submit", function (e) {
+
+        const contactForm = document.getElementById("contact-form");
+
+        // Handle form submission
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            // Log input values directly
-            const nameInput = form.querySelector('input[name="name"]');
-            const emailInput = form.querySelector('input[name="email"]');
-            const messageInput = form.querySelector('textarea[name="message"]');
-            console.log(
-              "Input name:",
-              nameInput ? nameInput.value : "not found"
-            );
-            console.log(
-              "Input email:",
-              emailInput ? emailInput.value : "not found"
-            );
-            console.log(
-              "Input message:",
-              messageInput ? messageInput.value : "not found"
-            );
-            // Debug: log form data
-            const fd = new FormData(form);
-            for (let [k, v] of fd.entries()) {
-              console.log("Field:", k, "=", v);
+
+            // Get form input values
+            const name = document.getElementById("name-input").value.trim();
+            const email = document.getElementById("email-input").value.trim();
+            const message = document
+              .getElementById("message-input")
+              .value.trim();
+
+            // Validate all fields are filled
+            if (!name || !email || !message) {
+              alert("Please fill in all fields!");
+              return;
             }
-            emailjs.sendForm("service_t2aiohd", "template_dskih39", form).then(
-              function () {
-                alert("Your message has been sent!");
-                form.reset();
-              },
-              function (error) {
-                alert("Failed to send message. Please try again later.");
-                console.error(error);
-              }
+
+            const submitBtn = contactForm.querySelector(
+              'button[type="submit"]'
             );
+            const originalText = submitBtn.textContent;
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            // Prepare email parameters
+            const emailParams = {
+              title: "New Contact Form Submission",
+              name: name,
+              email: email,
+              message: message,
+              time: new Date().toLocaleString(),
+            };
+
+            emailjs
+              .send("service_t2aiohd", "template_dskih39", emailParams)
+              .then(function (response) {
+                alert("Message sent successfully! ✅");
+                contactForm.reset();
+              })
+              .catch(function (error) {
+                console.error("❌ Failed to send email:", error);
+                alert("Failed to send message. Please try again. ❌");
+              })
+              .finally(function () {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+              });
           });
         }
       });

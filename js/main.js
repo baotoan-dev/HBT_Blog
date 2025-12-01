@@ -1,14 +1,6 @@
 (function () {
-  // Contact form demo
-  document
-    .getElementById("contact-form")
-    ?.addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert(
-        "Thank you for contacting! (Demo, please replace with real handler)"
-      );
-      this.reset();
-    });
+  // Contact form handler is now in index.html inline script
+  // Removed duplicate handler to avoid conflicts
 
   // Smooth fade text rotation effect (replaces Typed.js)
   const typewriterEl = document.getElementById("typewriter");
