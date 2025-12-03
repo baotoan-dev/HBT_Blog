@@ -63,68 +63,128 @@ const PROJECTS_DATA = {
         "The project leverages modern web standards including semantic HTML5, advanced CSS Grid and Flexbox layouts, and progressive JavaScript enhancement. Performance optimization techniques such as lazy loading, image optimization, and efficient code splitting ensure fast loading times across various network conditions.",
     },
   },
-
-  "e-commerce-dashboard": {
-    id: "e-commerce-dashboard",
-    title: "E-commerce Admin Dashboard",
+  "product-request": {
+    id: "product-request",
+    title: "Product Request Management",
     subtitle:
-      "Real-time analytics dashboard with advanced data visualization and inventory management system",
+      "Centralized system for creating, tracking, and approving product requests across teams",
     hero: {
-      gradient:
-        "linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%)",
+      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     },
     images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85",
+      "./assets/request/request-1.png",
+      "./assets/request/request-1.png",
+      "./assets/request/request-1.png",
+      "./assets/request/request-1.png",
     ],
     sidebar: {
-      role: "Full-stack Developer & UI Designer",
-      duration: "8 weeks (Aug - Sep 2024)",
-      techStack: "React, Node.js, MongoDB, Chart.js, Material-UI",
-      teamSize: "4 developers, 2 designers",
+      role: "Lead Backend & System Architect",
+      duration: "8 weeks (Aug - Oct 2024)",
+      techStack: "NestJS, PostgreSQL, Redis, Kafka, ReactJS",
+      teamSize: "4 backend, 2 frontend, 1 QA",
       status: "Production Ready",
-      demoLink: "https://example.com/dashboard-demo",
+      demoLink: "https://example.com/product-request",
     },
     content: {
       overview:
-        "A comprehensive e-commerce administration dashboard featuring real-time analytics, inventory management, and customer relationship tools. Built with modern React architecture and integrated with robust backend APIs for seamless data management and business intelligence.",
+        "This module provides a robust and scalable solution for managing product requests within the organization. It enables employees and departments to submit new product proposals, track approval workflows, maintain version history, and collaborate seamlessly. Designed to support high-volume operations, the system ensures transparency, traceability, and efficient communication across teams.",
       features: [
         {
-          icon: "fa-solid fa-chart-bar",
-          title: "Real-time Analytics Dashboard",
+          icon: "fa-solid fa-file-circle-plus",
+          title: "Create & Submit Product Requests",
         },
         {
-          icon: "fa-solid fa-boxes-stacked",
-          title: "Inventory Management System",
+          icon: "fa-solid fa-sitemap",
+          title: "Multi–Level Approval Workflow",
         },
         {
-          icon: "fa-solid fa-users",
-          title: "Customer Relationship Management",
+          icon: "fa-solid fa-users-gear",
+          title: "Role-Based Access Control (RBAC)",
         },
         {
-          icon: "fa-solid fa-shopping-cart",
-          title: "Order Processing & Tracking",
-        },
-        {
-          icon: "fa-solid fa-credit-card",
-          title: "Payment Gateway Integration",
+          icon: "fa-solid fa-clock-rotate-left",
+          title: "Full Activity & Version Tracking",
         },
         {
           icon: "fa-solid fa-bell",
-          title: "Real-time Notifications",
+          title: "Real-Time Notifications (Kafka/Redis)",
+        },
+        {
+          icon: "fa-solid fa-database",
+          title: "Centralized Request Repository",
         },
       ],
       achievements: [
-        "Reduced order processing time by 60% through automated workflows",
-        "Improved inventory accuracy to 99.5% with real-time tracking",
-        "Increased admin productivity by 40% with intuitive interface design",
-        "Implemented secure role-based access control for multi-user environments",
-        "Achieved 99.9% uptime with robust error handling and monitoring",
+        "Reduced approval time by 40% through automated workflow routing",
+        "Improved transparency with detailed activity logs and status tracking",
+        "Enabled cross-department collaboration with integrated comments system",
+        "Ensured high availability with distributed cache and message queue",
+        "Designed scalable schema supporting thousands of concurrent requests",
       ],
       technical:
-        "Built using React 18 with TypeScript for type safety, integrated with Node.js and Express backend. MongoDB Atlas for cloud database with real-time synchronization. Implemented Redux Toolkit for state management and Chart.js for data visualization. Features JWT authentication, API rate limiting, and comprehensive error logging.",
+        "Built using a microservice-ready architecture, the system leverages NestJS for API orchestration, PostgreSQL for structured data storage, and Redis for caching and realtime updates. Kafka is integrated to handle event-based workflows and notifications. The frontend UI uses ReactJS with reusable atomic components. Additional optimizations include query indexing, soft deletes with versioning, and comprehensive audit logging.",
+    },
+  },
+
+  "meeting-room-booking": {
+    id: "meeting-room-booking",
+    title: "Meeting Room Booking Dashboard",
+    subtitle:
+      "Centralized platform for scheduling, managing, and monitoring meeting room usage with real-time analytics",
+    hero: {
+      gradient: "linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%)",
+    },
+    images: [
+      "./assets/booking/booking-1.png",
+      "./assets/booking/booking-2.png",
+      "./assets/booking/booking-3.png",
+    ],
+    sidebar: {
+      role: "Full-stack Developer & System Architect",
+      duration: "7 weeks (Jun - Jul 2024)",
+      techStack: "React, NestJS, PostgreSQL, Socket.IO, Material-UI",
+      teamSize: "3 backend, 2 frontend, 1 QA",
+      status: "Production Ready",
+      demoLink: "https://example.com/meeting-dashboard",
+    },
+    content: {
+      overview:
+        "A complete meeting room booking management system designed to streamline scheduling, resource allocation, and room utilization. The platform provides real-time availability tracking, automated booking workflows, conflict detection, and analytics to help organizations optimize workspace usage.",
+      features: [
+        {
+          icon: "fa-solid fa-calendar-check",
+          title: "Room Scheduling & Booking",
+        },
+        {
+          icon: "fa-solid fa-clock",
+          title: "Real-time Availability Tracking",
+        },
+        {
+          icon: "fa-solid fa-map-location-dot",
+          title: "Interactive Room Map & Layouts",
+        },
+        {
+          icon: "fa-solid fa-user-lock",
+          title: "Role-Based Access Control",
+        },
+        {
+          icon: "fa-solid fa-bell",
+          title: "Instant Notifications (Email/SMS)",
+        },
+        {
+          icon: "fa-solid fa-chart-line",
+          title: "Usage & Productivity Analytics",
+        },
+      ],
+      achievements: [
+        "Reduced booking conflicts by 90% through automated availability validation",
+        "Improved meeting room utilization by 35% via analytics-driven insights",
+        "Enabled real-time updates using WebSockets for instant user feedback",
+        "Enhanced admin productivity with centralized room management tools",
+        "Integrated SSO and secure RBAC for enterprise-level access control",
+      ],
+      technical:
+        "Developed with React 18 and NestJS, utilizing PostgreSQL for relational data and real-time updates via Socket.IO. Implemented clean architecture, caching with Redis, and database indexing for fast availability queries. The dashboard features advanced analytics powered by Material-UI and custom data visualizations. Comprehensive logging, JWT authentication, and rate limiting ensure system reliability and security.",
     },
   },
 
